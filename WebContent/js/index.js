@@ -4,13 +4,18 @@ let nowPosition = 0;
 let bodyHieght = document.body.clientHeight;
 let loginForm;
 let body = document.querySelector("body");
-let login = document.querySelector(".sign-in");
+let login;
 let loginClose;
 let loginClick = false;
 body.classList.add("hiddenY");
 
-console.log(clientHeight);
-console.log(clientWidth);
+
+const loginCloseEvent = (e) =>{
+    loginClick = !loginClick;
+    body.lastChild.remove();
+    document.addEventListener("wheel",smoothWheel);
+    loginClose.removeEventListener("click",loginCloseEvent);
+}
 
 const smoothWheel = (e) => {
     if(e.deltaY >0){
@@ -37,6 +42,9 @@ const smoothWheel = (e) => {
 const makeLoginForm = () =>{
     let form = document.createElement("form");
     form.classList.add("login-form");
+    form.action="./sign-in";
+    form.acceptCharset="UTF-8";
+    form.method = "POST";
     let loginWrapper = document.createElement("div");
     loginWrapper.classList.add("login-wrapper");
     form.appendChild(loginWrapper);
@@ -64,11 +72,13 @@ const makeLoginForm = () =>{
     inputId.type="text";
     inputId.placeholder="아이디";
     inputId.classList.add("login-id");
+    inputId.name="id";
     loginInputWrapper.appendChild(inputId);
     let inputPw = document.createElement("input");
     inputPw.type="password";
     inputPw.placeholder = "비밀번호";
     inputPw.classList.add("login-pw");
+    inputPw.name="pw"
     loginInputWrapper.appendChild(inputPw);
     let loginSubmit = document.createElement("input");
     loginSubmit.type="submit";
@@ -99,24 +109,21 @@ const makeLoginForm = () =>{
 
 }
 
-const loginCloseEvent = (e) =>{
-    loginClick = !loginClick;
-    body.lastChild.remove();
-    document.addEventListener("wheel",smoothWheel);
-    loginClose.removeEventListener("click",loginCloseEvent);
-}
-
 document.addEventListener("wheel",smoothWheel);
 
-login.addEventListener("click", (e)=>{
-    if(!loginClick){
-        makeLoginForm();
-        loginForm = document.querySelector(".login-form");
-        loginForm.classList.add("select");
-        loginClose = document.querySelector(".login-close");
-        loginClose.addEventListener("click",loginCloseEvent);
-        loginClick = !loginClick;
-        document.removeEventListener("wheel",smoothWheel);
-    }
-})
+if(document.querySelector(".sign-in")!=null){
+	login = document.querySelector(".sign-in"); 
 
+	login.addEventListener("click", (e)=>{
+	    if(!loginClick){
+	        makeLoginForm();
+	        loginForm = document.querySelector(".login-form");
+	        loginForm.classList.add("select");
+	        loginClose = document.querySelector(".login-close");
+	        loginClose.addEventListener("click",loginCloseEvent);
+	        loginClick = !loginClick;
+	        document.removeEventListener("wheel",smoothWheel);
+	    }
+	})
+
+}

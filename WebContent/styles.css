@@ -2,7 +2,10 @@ html{
     scroll-behavior: smooth;
 }
 
-
+a{
+    text-decoration: none;
+	color: #e9eef2;
+}
 
 body{
     margin: 0;
@@ -11,7 +14,7 @@ body{
     font-size: 15px;
     color: #444;
     font-weight: 400;
-    font-family: NanumBarunGothic,Dotum,'돋움',sans-serif;
+    font-family: NanumBarunGothic,Dotum,'�룍��',sans-serif;
     overflow-x: hidden;
 }
 
@@ -21,6 +24,11 @@ body{
 
 .body-wrapper{
     
+}
+
+.username{
+	margin-right: 3px;
+    color: #ffd1d1;
 }
 
 .header{
@@ -102,8 +110,10 @@ body{
 }
 
 .header-right-up .item{
-    margin:10px;    
+	margin: 10px;
     cursor: pointer;
+    width: fit-content;
+    display: flex;
 }
 
 .header-right-down{
@@ -770,3 +780,9 @@ body{
     margin-right: 10px;
 }
 
+.logo{
+	resize: both;
+    width: 120px;
+    height: 65px;
+    object-fit: cover;
+}

@@ -1,3 +1,8 @@
+<%@page import="com.sun.org.apache.bcel.internal.generic.INSTANCEOF"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="en">
     <!-- 테스트 -->
@@ -49,17 +54,29 @@
             </div>
 
             <div class="header-center">
-                <img src="./img/logo-white.png" class="logo">
+                <img src="./img/logo.png" class="logo">
 
             </div>
 
             <div class="header-right">
                 <div class="header-right-up">
-                    <div class="item sign-in">
-                        로그인
-                    </div>
+                    	<%
+							if(session.getAttribute("LOGIN_ID") != null){
+								out.println("<div class='item'><a href='./logout'>로그아웃</a></div>");
+							}else{
+								out.println("<div class='item sign-in'>로그인</div>");
+							}
+						%>
                     <div class = "item sign-up">
-                        회원가입
+                    	<%
+							if(session.getAttribute("LOGIN_ID") != null){
+								out.println("<a href='./my-page.jsp' class='username'>"+session.getAttribute("LOGIN_ID")+"</a>");
+								out.println("<div class='welcome-label'>님 환영합니다.</div>");
+							}else{
+								out.println("<a href='./sign-up.jsp'>회원가입</a>");
+							}
+						%>
+                       	 
                     </div>
                     <div class="item">
                         빠른예매
