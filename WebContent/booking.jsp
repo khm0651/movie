@@ -14,83 +14,8 @@
 </head>
 <body>
     <div class="booking-wrapper">
-        <div class="header">
-
-            <div class="header-left">
-                <div class="header-left-up">
-                    <div class="item">
-                        VIP LOUNGE
-                    </div>
-                    <div class = "item">
-                        멤버십
-                    </div>
-                    <div class="item">
-                        고객센터
-                    </div>
-                </div>
-                <div class="header-left-down">
-                    <div class="more-search">
-                        <img src="./img/ico-sitemap-white.png" class="more">
-                        <img src="img/ico-search-white.png" class="search">
-
-                    </div>
-                    <div class="item-wrapper">
-                        <div class="item">
-                            영화 
-                        </div>
-                        <div class="item">
-                            예매
-                        </div>
-                        <div class="item">
-                            극장
-                        </div>
-                    </div>
-                    
-
-                </div>
-            </div>
-
-            <div class="header-center">
-                <img src="./img/logo-white.png" class="logo">
-
-            </div>
-
-            <div class="header-right">
-                <div class="header-right-up">
-                    <div class="item sign-in">
-                        로그인
-                    </div>
-                    <div class = "item sign-up">
-                        회원가입
-                    </div>
-                    <div class="item">
-                        빠른예매
-                    </div>
-                </div>
-                <div class="header-right-down">
-                    
-                    <div class="item-wrapper">
-                        <div class="item">
-                            이벤트 
-                        </div>
-                        <div class="item">
-                            스토어
-                        </div>
-                        <div class="item">
-                            혜택
-                        </div>
-                    </div>
-                    
-                    <div class="cal-login">
-                        <img src="./img/ico-schedule-white.png" class="cal">
-
-                        <img src="./img/ico-mymega-white.png" class="login">
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
+        
+        <%@ include file="./header.jsp" %>
 
         <div class="booking-content">
             <div class="booking-title">
@@ -155,7 +80,7 @@
                 
                 <div class="booking-right">
                     <div class="booking-info-title">
-                        패왕별희 디 오리지널
+                     	${movieName }
                     </div>
                     <div class="booking-info-more">
                         <div class="info-detail">
@@ -170,7 +95,7 @@
                             </div>
                         </div>
                         <div class="info-poster">
-                            포스터
+                           	 <img src="${movieImg }">
                         </div>
                     </div>
 
@@ -243,9 +168,14 @@
                                 최종결제금액
                             </div>
                             <div class="result">
-                                <span>32,000</span> 원
+                                <span class="result-price">0</span> 원
                             </div>
                         </div>
+                        
+                        <div class="finish">
+                        	구매하기
+                        </div>
+
                     </div>
                 </div>
 

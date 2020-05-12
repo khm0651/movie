@@ -1,26 +1,25 @@
 package movie;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class Logout
+ * Servlet implementation class Booking
  */
-@WebServlet("/Logout")
-public class Logout extends HttpServlet {
+@WebServlet("/Booking")
+public class Booking extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Logout() {
+    public Booking() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,20 +29,18 @@ public class Logout extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html; charset=UTF-8"); 
-		HttpSession session = request.getSession();
-		PrintWriter out = response.getWriter();
-		if(session.getAttribute("LOGIN_ID")!=null) {
-			session.removeAttribute("LOGIN_ID");
-			if(session.getAttribute("IS_ADMIN")!=null) {
-				session.removeAttribute("IS_ADMIN");
-			}
-			response.sendRedirect("./main.jsp");
-		}else {
-			out.println("<script>alert('잘못된 접근입니다.');history.back();</script>");
-		}
+		String movieNmae = request.getParameter("movieName");
+		String movieImg = request.getParameter("movieImg");
 		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("./booking.jsp");
+		request.setAttribute("movieName", movieNmae);
+		request.setAttribute("movieImg", movieImg);
+		dispatcher.forward(request, response);
 	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+
 
 }

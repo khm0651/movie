@@ -7,6 +7,7 @@ let adultCount = 0;
 let teenageCount = 0;
 let selectedCount=totalCount;
 let str = ["성인","청소년"];
+let price = [10000,7000];
 let mBtn = document.querySelectorAll(".m-btn");
 let pBtn = document.querySelectorAll(".p-btn");
 let cBtn = document.querySelectorAll(".c-btn");
@@ -16,6 +17,9 @@ let sitdiv;
 let selectedSit = document.querySelectorAll(".selected-sit");
 let f = true;
 let refresh = document.querySelector(".booking-refresh")
+let resultprice = document.querySelector(".result-price");
+let finish = document.querySelector(".finish");
+let movieName = document.querySelector(".booking-info-title").innerText;
 header.classList.add("header-not-fixed");
 
 refresh.addEventListener("click",e=>{
@@ -88,12 +92,23 @@ for(let i = 0 ; i<mBtn.length; i++){
         let count = parseInt(cBtn[i].innerHTML);
         count--
         totalCount--;
+        if(i==0){
+        	adultCount--;
+        }else{
+        	teenageCount--;
+        }
         if(count<0){
             alert("개수가 이상합니다.");
             count++;
             totalCount++;
+            if(i==0){
+            	adultCount++;
+            }else{
+            	teenageCount++;
+            }
         }
         cBtn[i].innerHTML=count;
+        resultprice.innerText = (adultCount * price[0]) + (teenageCount * price[1]);
         if(count>0){
             rc[i].innerhtml=count;
         }else if(count == 0){
@@ -108,12 +123,23 @@ for(let i = 0 ; i<pBtn.length; i++){
         let count = parseInt(cBtn[i].innerHTML);
         count++
         totalCount++;
+        if(i==0){
+        	adultCount++;
+        }else{
+        	teenageCount++;
+        }
         if(totalCount>8){
             alert("선택 개수 초과");
             count--;
             totalCount--;
+            if(i==0){
+            	adultCount--;
+            }else{
+            	teenageCount--;
+            }
         }
         cBtn[i].innerHTML=count;
+        resultprice.innerText = (adultCount * price[0]) + (teenageCount * price[1]);
         if(count>0){
             rc[i].innerHTML=count;
         }else if(count == 0){
@@ -136,7 +162,7 @@ for(let i = 0; i<sitdiv.length; i++){
         selectedCount=(parseInt(cBtn[0].innerText) +parseInt(cBtn[1].innerText))-c;
 
         let selectedSitPlace = sitdiv[i].classList.toString().split(" ")[1];
-        if(sitdiv[i].classList.contains("selected")){
+        if(sitdiv[i].classList.contains("selected") && !sitdiv[i].classList.contains("reservationSit")){
             for(let i=0; i<selectedSit.length; i++){
                 if(selectedSit[i].innerText == selectedSitPlace){
                     selectedSit[i].innerText = "-"
@@ -146,10 +172,12 @@ for(let i = 0; i<sitdiv.length; i++){
             selectedCount++;
             sitdiv[i].classList.remove("selected");
         }else{
-            if(selectedCount<=0){
+        	if(selectedCount<=0){
                 alert("선택 개수 초과");
                 
-            }else{
+            }else if(sitdiv[i].classList.contains("reservationSit")){
+        		alert("예매완료된 좌석입니다.");
+        	}else{
                 
                 for(let i=0; i<selectedSit.length; i++){
                     if(selectedSit[i].innerText == "-"){
@@ -165,7 +193,131 @@ for(let i = 0; i<sitdiv.length; i++){
         console.log("total : "+totalCount);
         console.log("selected : "+selectedCount);
     })
+      
 }
 
+finish.addEventListener("click",e=>{
+	
+	let room = document.querySelector(".movie-place").innerText;
+	let date = document.querySelector(".movie-day").innerText;
+	let startTime = document.querySelector(".movie-time").innerText.split("~")[0];
+	let endTime = document.querySelector(".movie-time").innerText.split("~")[1];
+	let sit = [];
+	let price = resultprice.innerText;
+	for(let i =0; i<selectedSit.length ; i++){
+		if(selectedSit[i].innerText != "-"){
+			sit.push(selectedSit[i].innerText);
+		}
+	}
+	if(sit.length != totalCount){
+		alert("좌석 수를 확인해주세요");
+	}else{
+		let form = document.createElement("form");
+		form.action = "./reservation";
+		form.method = "POST";
+		form.acceptCharset = "UTF-8";
+		let input = document.createElement("input");
+		input.type="hidden";
+		input.name="movieName";
+		input.value=movieName;
+		form.append(input);
+		
+		input = document.createElement("input");
+		input.type="hidden";
+		input.name="movieName";
+		input.value=movieName;
+		form.append(input);
+		
+		input = document.createElement("input");
+		input.type="hidden";
+		input.name="room";
+		input.value=room;
+		form.append(input);
+		
+		input = document.createElement("input");
+		input.type="hidden";
+		input.name="date";
+		input.value=date;
+		form.append(input);
+		
+		input = document.createElement("input");
+		input.type="hidden";
+		input.name="startTime";
+		input.value=startTime;
+		form.append(input);
+		
+		input = document.createElement("input");
+		input.type="hidden";
+		input.name="endTime";
+		input.value=endTime;
+		form.append(input);
+		
+		input = document.createElement("input");
+		input.type="hidden";
+		input.name="sit";
+		input.value=sit;
+		form.append(input);
+		
+		input = document.createElement("input");
+		input.type="hidden";
+		input.name="price";
+		input.value=price;
+		form.append(input);
+		
+		input = document.createElement("input");
+		input.type="hidden";
+		input.name="adult";
+		input.value=adultCount;
+		form.append(input);
+		
+		input = document.createElement("input");
+		input.type="hidden";
+		input.name="teenage";
+		input.value=teenageCount;
+		form.append(input);
+		
+		finish.append(form);
+		form.submit();
+		
+		
+	}
+	
+	
+	
+})
 
+var xmlHttp = new XMLHttpRequest();       // XMLHttpRequest 객체를 생성함.
+let sitList;
+xmlHttp.onreadystatechange = function() { // onreadystatechange 이벤트 핸들러를 작성함.
 
+    // 서버상에 문서가 존재하고 요청한 데이터의 처리가 완료되어 응답할 준비가 완료되었을 때
+
+    if(this.status == 200 && this.readyState == this.DONE) {
+
+        // 요청한 데이터를 문자열로 반환함.
+
+    	sitList = xmlHttp.responseText;
+    	sitList = sitList.split(",");
+    	sitList.pop(0);
+    	sitList.sort();
+        for(let i=0; i<sitdiv.length;i++){
+        	for(let j=0; j<sitList.length;j++){
+        		if(sitdiv[i].classList[1] == sitList[j]){
+        			sitdiv[i].classList.add("reservationSit");
+        			sitdiv[i].style.backgroundColor="#413c3cbd";
+        			sitdiv[i].style.color="#fffff0ab";
+        			sitdiv[i].style.fontWeight="#bold";
+        			sitdiv[i].style.fontSize="20px";
+        			sitdiv[i].innerText="X";
+        			console.log("find");
+        		}
+        	}
+        }
+
+    }
+
+};
+
+xmlHttp.open("GET", `./sitList?movieName=${movieName}`, true);
+
+xmlHttp.send();

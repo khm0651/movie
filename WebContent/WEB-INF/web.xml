@@ -14,20 +14,26 @@ id="WebApp_ID" version="4.0">
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   
-  <!--  
   <servlet>
-    <servlet-name>Pinfo</servlet-name>
-    <servlet-class>web.PinfoServlet</servlet-class>
+    <servlet-name>BoxOfficeList</servlet-name>
+    <servlet-class>movie.BoxOfficeList</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Pinfo</servlet-name>
+    <servlet-name>BoxOfficeList</servlet-name>
     <url-pattern>/index.jsp</url-pattern>
   </servlet-mapping>
-  -->
+  
+  
   <servlet>
     <servlet-name>DBConncet</servlet-name>
     <servlet-class>movie.DBConnect</servlet-class>
     <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>BoxOffice</servlet-name>
+    <servlet-class>movie.BoxOffice</servlet-class>
+    <load-on-startup>2</load-on-startup>
   </servlet>
   
   
@@ -49,7 +55,32 @@ id="WebApp_ID" version="4.0">
     <url-pattern>/logout</url-pattern>
   </servlet-mapping>
   
+    <servlet>
+    <servlet-name>booking</servlet-name>
+    <servlet-class>movie.Booking</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>booking</servlet-name>
+    <url-pattern>/booking</url-pattern>
+  </servlet-mapping>  
 
+    <servlet>
+    <servlet-name>reservation</servlet-name>
+    <servlet-class>movie.Reservation</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>reservation</servlet-name>
+    <url-pattern>/reservation</url-pattern>
+  </servlet-mapping>
+    
+    <servlet>
+    <servlet-name>sitList</servlet-name>
+    <servlet-class>movie.ReservationSitList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>sitList</servlet-name>
+    <url-pattern>/sitList</url-pattern>
+  </servlet-mapping>  
   
   
 </web-app>

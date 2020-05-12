@@ -41,12 +41,15 @@ public class Login extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
+		if(id.equals("") || pw.equals("")) {
+			out.println("<script>alert('아이디 또는 비밀번호를 입력해주세요.');history.back()</script>");
+		}
 		if(check(id,pw)) {
 			HttpSession session = request.getSession();
 			session.setAttribute("LOGIN_ID", id);
 			response.sendRedirect("./index.jsp");
 		}else {
-			out.println("<script>alert('아이디 또는 비밀번호가 일치하지않습니다.');history.back();</script>");
+			out.println("<script>alert('아이디 또는 비밀번호가 일치하지않습니다.');history.back()</script>");
 		}
 		
 	}

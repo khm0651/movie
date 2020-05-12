@@ -623,10 +623,7 @@ body{
 
 .info-poster{
     display: flex;
-    justify-content: center;
-    align-items: center;
     border: 1px solid;
-    width: 35%;
     height: 100px;
     margin-left: 4%;
 }
@@ -785,4 +782,18 @@ body{
     width: 120px;
     height: 65px;
     object-fit: cover;
+}
+
+.finish{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    height: 40px;
+    border: 1px solid #686565;
+    box-shadow: inset 0px 0px 4px 1px white;
+    background-color: #291d1f8c;
+	color: ghostwhite;
+    font-size: 13px;
+    cursor:pointer;
 }
