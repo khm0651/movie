@@ -8,17 +8,7 @@
 	<div class="header">
 
             <div class="header-left">
-                <div class="header-left-up">
-                    <div class="item">
-                        VIP LOUNGE
-                    </div>
-                    <div class = "item">
-                        멤버십
-                    </div>
-                    <div class="item">
-                        고객센터
-                    </div>
-                </div>
+                
                 <div class="header-left-down">
                     <div class="more-search">
                         <img src="./img/ico-sitemap-white.png" class="more">
@@ -32,9 +22,7 @@
                         <div class="item">
                             예매
                         </div>
-                        <div class="item">
-                            극장
-                        </div>
+
                     </div>
                     
 
@@ -66,21 +54,19 @@
 						%>
                        	 
                     </div>
-                    <div class="item">
-                        빠른예매
-                    </div>
+
                 </div>
                 <div class="header-right-down">
                     
                     <div class="item-wrapper">
                         <div class="item">
-                            이벤트 
+                           	극장 
                         </div>
                         <div class="item">
-                            스토어
+                            게시판
                         </div>
                         <div class="item">
-                            혜택
+                            랜덤예매
                         </div>
                     </div>
                     
