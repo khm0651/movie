@@ -1,0 +1,47 @@
+.moviePoster {
+  float: left;
+  margin-top: 50px;
+}
+
+.bgImg {
+  width: 400px;
+  height: 283px;
+  background-image: url(./img/movieTicket.png);
+  margin-left: 10px;
+}
+
+.movieTitle {
+  display: flex;
+  padding-top: 170px;
+  align-content: center;
+  justify-content: center;
+}
+
+.roomAndSit {
+  float: left;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+
+.startTime {
+  float: left;
+}
+
+.adultAge {
+  float: left;
+}
+
+.dateMovieTime {
+  margin-top: 20px;
+  margin-left: 205px;
+}
+
+.adultAge {
+  margin-top: 20px;
+  margin-left: 50px;
+}
+
+.price {
+  margin-top: 20px;
+  margin-left: 205px;
+}
