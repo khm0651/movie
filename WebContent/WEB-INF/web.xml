@@ -82,5 +82,13 @@ id="WebApp_ID" version="4.0">
     <url-pattern>/sitList</url-pattern>
   </servlet-mapping>  
   
+  <servlet>
+    <servlet-name>bookingTime</servlet-name>
+    <servlet-class>movie.BookingTime</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>bookingTime</servlet-name>
+    <url-pattern>/bookingTime</url-pattern>
+  </servlet-mapping>    
   
 </web-app>

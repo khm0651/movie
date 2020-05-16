@@ -19,9 +19,9 @@
                         <div class="item">
                             영화 
                         </div>
-                        <div class="item">
+                        <a href="./bookingTime" class="item">
                             예매
-                        </div>
+                        </a>
 
                     </div>
                     
@@ -30,7 +30,7 @@
             </div>
 
             <div class="header-center">
-                <img src="./img/logo.png" class="logo">
+                <a href="./"><img src="./img/logo.png" class="logo"></a>
 
             </div>
 
