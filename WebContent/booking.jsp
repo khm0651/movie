@@ -85,13 +85,13 @@
                     <div class="booking-info-more">
                         <div class="info-detail">
                             <div class="movie-place">
-                                5관
+                                ${place }
                             </div>
                             <div class="movie-day">
-                                2020.05.03
+                                ${date }
                             </div>
                             <div class="movie-time">
-                                17:20~20:21
+                                ${startTime }${endTime }
                             </div>
                         </div>
                         <div class="info-poster">
@@ -187,5 +187,6 @@
     </div>
     
     <script src="./js/booking.js"></script>
+    <script src="./js/header.js"></script>
 </body>
 </html>

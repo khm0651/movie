@@ -46,9 +46,11 @@
                             ♥
                         </div>
     
-                        <a href="./booking?movieName=${bol.movieName[i] }&&movieImg=${bol.movieImg[i]}" class="reservation">
+                        <div class="reservation">
                                                        예매
-                        </a>
+                        </div>
+                        
+                        <input type="hidden" name = "movieName" value="${bol.movieName[i] }"/>
                     </div>
     
                 </div>

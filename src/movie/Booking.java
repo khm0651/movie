@@ -1,6 +1,14 @@
 package movie;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.SimpleFormatter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -27,14 +35,42 @@ public class Booking extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String movieNmae = request.getParameter("movieName");
-		String movieImg = request.getParameter("movieImg");
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		String movieName = request.getParameter("movieName");
+		String movieImg = null;
+		String startTime = request.getParameter("startTime");
+		String endTime = request.getParameter("endTime");
+		String place = request.getParameter("place");
+		Date date = new Date();
+		SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd");
+		Connection conn = null;
+		Statement stmt =null;
+		try {
+			String dburl = "jdbc:apache:commons:dbcp:wdbpool";
+			conn = DriverManager.getConnection(dburl);
+			stmt = conn.createStatement();
+			
+			ResultSet rs = stmt.executeQuery("select poster from boxOfficeList where movieNm = '"+movieName+"'");
+			while(rs.next()) {
+				movieImg = rs.getString("poster");
+			}
+		}catch (SQLException e){
+			System.out.println("from Booking : "+e.getMessage());
+		}finally {
+			
+		}
+		
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("./booking.jsp");
-		request.setAttribute("movieName", movieNmae);
+		request.setAttribute("movieName", movieName);
 		request.setAttribute("movieImg", movieImg);
+		request.setAttribute("startTime", startTime);
+		request.setAttribute("endTime", endTime);
+		request.setAttribute("place", place);
+		request.setAttribute("date", format.format(date));
 		dispatcher.forward(request, response);
 	}
 

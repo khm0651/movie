@@ -33,7 +33,9 @@
 							</div>
 						</c:forEach>
 					</c:if>
-					
+					<c:if test="${!empty back }">
+							<a href="./bookingTime" class="back">전체목록</a>
+					</c:if>
 					
 				</div>
 			</div>
@@ -81,5 +83,6 @@
 	</div>
 	
 	<script src="./js/bookingTime.js"></script>
+	<script src="./js/header.js"></script>
 </body>
 </html>

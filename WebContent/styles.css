@@ -104,6 +104,7 @@ body{
 
 .header-left-down .item{
     margin-right: 10px;
+    color:white;
 }
 
 .item-wrapper{
@@ -204,6 +205,7 @@ body{
     color: black;
     font-weight: bold;
     font-size: 13px;
+    cursor:pointer;
 }
 
 .bg-img{
@@ -467,12 +469,12 @@ body{
 }
 
 .booking-title{
-    font-size: 20px;
+	font-size: 20px;
     display: flex;
     align-items: center;
     height: 60px;
     padding-left: 10px;
-    width: 750px;
+    width: 855px;
 }
 
 .booking-count{
@@ -628,6 +630,16 @@ body{
 .info-detail{
     width: 55%;
 }
+
+.info-detail .movie-day{
+	margin-top: 5px;
+}
+
+.info-detail .movie-time{
+	margin-top: 5px;
+}
+
+
 
 .info-poster{
     display: flex;
@@ -828,13 +840,14 @@ body{
 }
 
 .reservation-item {
-  display: flex;
-  margin-top: 25px;
-  height: 280px;
-  align-items: center;
-  box-shadow: 5px 15px 10px 0px #3a3a3a7a;
-  padding: 0px 20px;
-  transform: rotate3d(1, 0, 0, 15deg);
+	display: flex;
+    margin-top: 25px;
+    height: 280px;
+    align-items: center;
+    box-shadow: 5px 15px 10px 0px #3a3a3a7a;
+    padding: 0px 20px;
+    border-radius: 35px;
+    transform: rotate3d(1, 0, 0, 15deg);
 }
 
 .reservation-item:hover .reservation-poster {
@@ -870,21 +883,22 @@ body{
 }
 
 .reservation-poster {
-  width: 150px;
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 20px;
-  border: 1px solid;
+    width: 150px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    box-shadow: 0px 0px 8px #000000b0;
+    border-radius: 10px;
 }
 
 .reservation-ticket {
-  width: 550px;
-  height: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    width: 550px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -929,6 +943,14 @@ body{
 	font-size: 13px;
     cursor: pointer;
     margin-bottom: 7px;
+}
+
+
+.movieList .back{
+	color: #a9a9a9a3;
+    font-weight: bold;
+    display: block;
+    margin-top: 30px;
 }
 
 .movieTime-wrapper{

@@ -72,12 +72,18 @@ public class BookingTime extends HttpServlet {
 		String movieName = request.getParameter("movieName");
 		Connection conn = null;
 		Statement stmt = null;
+		ResultSet rs = null;
 		System.out.println(movieName);
 		try {
 			String dburl = "jdbc:apache:commons:dbcp:wdbpool";
 			conn = DriverManager.getConnection(dburl);
 			stmt = conn.createStatement();
-			ResultSet rs = stmt.executeQuery("select * from movieTimeLine where movieName='"+movieName+"'");
+			if(movieName!=null) {
+				rs = stmt.executeQuery("select * from movieTimeLine where movieName='"+movieName+"'");
+			}else {
+				rs = stmt.executeQuery("select * from movieTimeLine");
+			}
+			
 			while(rs.next()) {
 				bt.setMovieName(rs.getString("movieName"));
 				bt.setPlace(rs.getString("place"));
@@ -85,8 +91,13 @@ public class BookingTime extends HttpServlet {
 				bt.setStartTime(rs.getString("startTime"));
 				bt.setEndTime(rs.getString("endTime"));
 			}
+
+			if(movieName!=null) {
+				rs = stmt.executeQuery("select movieNm from boxOfficeList where movieNm = '"+movieName+"'");
+			}else {
+				rs = stmt.executeQuery("select movieNm from boxOfficeList");
+			}
 			
-			rs = stmt.executeQuery("select movieNm from boxOfficeList");
 			while(rs.next()) {
 				btli.setMovieName(rs.getString("movieNm"));
 			}
@@ -106,6 +117,7 @@ public class BookingTime extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("./bookingTime.jsp");
 		request.setAttribute("movieNameList", btli);
 		request.setAttribute("timeLine", bt);
+		request.setAttribute("back", true);
 		dispatcher.forward(request, response);
 	}
 

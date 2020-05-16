@@ -20,6 +20,7 @@ let refresh = document.querySelector(".booking-refresh")
 let resultprice = document.querySelector(".result-price");
 let finish = document.querySelector(".finish");
 let movieName = document.querySelector(".booking-info-title").innerText;
+let place = document.querySelector(".movie-place").innerText;
 header.classList.add("header-not-fixed");
 
 refresh.addEventListener("click",e=>{
@@ -318,6 +319,6 @@ xmlHttp.onreadystatechange = function() { // onreadystatechange 이벤트 핸들
 
 };
 
-xmlHttp.open("GET", `./sitList?movieName=${movieName}`, true);
+xmlHttp.open("GET", `./sitList?movieName=${movieName}&&place=${place}`, true);
 
 xmlHttp.send();

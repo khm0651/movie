@@ -37,7 +37,7 @@ public class ReservationSitList extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
-		
+		String place = request.getParameter("place");
 		String movieName= request.getParameter("movieName");
 		System.out.println(movieName);
 		Connection conn =null;
@@ -47,7 +47,7 @@ public class ReservationSitList extends HttpServlet {
 			String dburl = "jdbc:apache:commons:dbcp:wdbpool";
 			conn = DriverManager.getConnection(dburl);
 			stmt = conn.createStatement();
-			String query = "select sit from reservation where movieName = '"+movieName+"'";
+			String query = "select sit from reservation where movieName = '"+movieName+"' and room='"+place+"'";
 			ResultSet rs = stmt.executeQuery(query);
 			while(rs.next()) {
 				sitList += rs.getString("sit")+",";
