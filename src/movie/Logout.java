@@ -39,7 +39,7 @@ public class Logout extends HttpServlet {
 			if(session.getAttribute("IS_ADMIN")!=null) {
 				session.removeAttribute("IS_ADMIN");
 			}
-			response.sendRedirect("./main.jsp");
+			response.sendRedirect("./index.jsp");
 		}else {
 			out.println("<script>alert('잘못된 접근입니다.');history.back();</script>");
 		}

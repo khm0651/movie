@@ -17,6 +17,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.SimpleFormatter;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -105,11 +106,28 @@ public class BoxOffice extends HttpServlet {
 			}
 			Connection conn =null;
 			Statement stmt = null;
+			String[] place = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P"};
+			Calendar startTime = Calendar.getInstance();
+			SimpleDateFormat hourFormat = new SimpleDateFormat("HH:mm");
+
+			startTime.setTime(new Date());
+			startTime.set(Calendar.HOUR_OF_DAY, 9);
+			startTime.set(Calendar.MINUTE, 0);
+			
+			Calendar endTime = Calendar.getInstance();
+			endTime.setTime(startTime.getTime());
+			endTime.add(Calendar.HOUR_OF_DAY, 2);
+			endTime.add(Calendar.MINUTE, 30);
+			
+			SimpleDateFormat yearFormat = new SimpleDateFormat("yyyy.MM.dd");
+			String date = yearFormat.format(new Date());
+			
 			try {
 				String dburl = "jdbc:apache:commons:dbcp:wdbpool";
 				conn = DriverManager.getConnection(dburl);
 				stmt = conn.createStatement();
 				stmt.executeUpdate("delete from boxOfficeList");
+				stmt.executeUpdate("delete from movieTimeLine");
 				for(int i =0; i<dList.size();i++) {
 					String query = "insert into boxOfficeList values('"+dList.get(i).rnum+"','"+dList.get(i).rank+"','"+dList.get(i).rankInten+"','"+dList.get(i).rankOldAndNew+"','"+dList.get(i).movieCd+"','"+dList.get(i).movieNm+"','"+dList.get(i).openDt+"','"+dList.get(i).salesAmt+"','"+dList.get(i).salesShare+"','"+dList.get(i).salesInten+"','"+dList.get(i).salesChange+"','"+dList.get(i).salesAcc+"','"+dList.get(i).audiCnt+"','"+dList.get(i).audiInten+"','"+dList.get(i).audiChange+"','"+dList.get(i).audiAcc+"','"+dList.get(i).scrnCnt+"','"+dList.get(i).showCnt+"','"+dList.get(i).poster+"')";
 					int rs = stmt.executeUpdate(query);
@@ -118,7 +136,27 @@ public class BoxOffice extends HttpServlet {
 					}else {
 						System.out.println("실패");
 					}
+					for(int j=0; j<5; j++) {
+						String pName = place[i]+"-"+(j+1)+"관";
+						String st = hourFormat.format(startTime.getTime());
+						String et = hourFormat.format(endTime.getTime());
+						String movieQuery = "insert into movieTimeLine values('"+dList.get(i).movieNm+"','"+pName+"','"+date+"','"+st+"','"+et+"')";
+						rs = stmt.executeUpdate(movieQuery);
+						if(!(rs>0))System.out.println("실패");
+						startTime.add(Calendar.HOUR_OF_DAY, 3);
+						
+						endTime.setTime(startTime.getTime());
+						endTime.add(Calendar.HOUR_OF_DAY, 2);
+						endTime.add(Calendar.MINUTE, 30);
+					}
+					startTime.set(Calendar.HOUR_OF_DAY, 9);
+					startTime.set(Calendar.MINUTE, 0);
+					
+					endTime.setTime(startTime.getTime());
+					endTime.add(Calendar.HOUR_OF_DAY, 2);
+					endTime.add(Calendar.MINUTE, 30);
 				}
+				
 				
 				
 			}catch(SQLException e){

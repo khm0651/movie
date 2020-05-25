@@ -91,4 +91,31 @@ id="WebApp_ID" version="4.0">
     <url-pattern>/bookingTime</url-pattern>
   </servlet-mapping>    
   
+   <servlet>
+    <servlet-name>mypage</servlet-name>
+    <servlet-class>movie.Mypage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>mypage</servlet-name>
+    <url-pattern>/mypage</url-pattern>
+  </servlet-mapping> 
+
+   <servlet>
+    <servlet-name>deleteReservation </servlet-name>
+    <servlet-class>movie.DeleteReservation</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deleteReservation </servlet-name>
+    <url-pattern>/deleteReservation </url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>Review </servlet-name>
+    <servlet-class>movie.YoutubeReview</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Review </servlet-name>
+    <url-pattern>/review </url-pattern>
+  </servlet-mapping>
+    
 </web-app>

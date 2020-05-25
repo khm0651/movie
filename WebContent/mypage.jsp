@@ -1,11 +1,13 @@
+<%@page import="com.sun.org.apache.bcel.internal.generic.INSTANCEOF"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="EUC-KR"%>
+    pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="./styles.css" />
-<link rel="stylesheet" href="./reset.css">
-<link rel="stylesheet" href="./mypageStyle.css">
+<link rel="stylesheet" href="./styles/styles.css" />
+<link rel="stylesheet" href="./styles/reset.css">
+<link rel="stylesheet" href="./styles/mypageStyle.css">
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -15,66 +17,36 @@
 
 	<div class="my-page-content">
 
-		<div class="reservation-title">¿¹¸Å ³»¿ª</div>
+		<div class="reservation-title">ì˜ˆë§¤ ë‚´ì—­</div>
 		<div class="reservation-content">
-			<div class="reservation-item">
-				<img src="./img/poster1.jpg" class="reservation-poster" />
-
-				<input type="button" value="¿¹¸ÅÃë¼Ò">
-				<div class="reservation-ticket">
-					<div class="bgImg">
-						<div class="movieTitle">·¹ÀÌ´Ï µ¥ÀÌ ÀÎ ´º¿å</div>
-						<div class="roomAndSit">
-							<div class="room">5°ü</div>
-							<div class="sit">D°ü 3¿­</div>
+			<c:if test="${!empty reservation }">
+				<c:forEach var="i" begin="0" end="${reservation.listSize -1 }">
+					<div class="reservation-item">
+						<img src="${reservation.poster[i] }" class="reservation-poster" />
+		
+						<input type="button" value="ì˜ˆë§¤ì·¨ì†Œ">
+						<div class="reservation-ticket">
+							<div class="bgImg">
+								<div class="movieTitle">${reservation.movieName[i] }</div>
+								<div class="roomAndSit">
+									<div class="room">${reservation.place[i] }</div>
+									<div class="sit">${reservation.sit[i] }</div>
+								</div>
+		
+								<div class="dateMovieTime">
+									<div class="buyDate">${reservation.buyDate[i] }</div>
+									<div class="startTime">${reservation.startTime[i] }</div>
+									<div class="endTime"> ~ ${reservation.endTime[i] }</div>
+								</div>
+		
+								<div class="adultAge">ì„±ì¸ ${reservation.adult[i] }ëª… ì²­ì†Œë…„ ${reservation.teenAge[i] }ëª…</div>
+								<div class="price">${reservation.price[i] }ì›</div>
+							</div>
 						</div>
-
-						<div class="dateMovieTime">
-							<div class="buyDate">2020-05-13</div>
-							<div class="startTime">¿ÀÈÄ 1:30</div>
-							<div class="endTime">¿ÀÈÄ 3:30</div>
-						</div>
-
-						<div class="adultAge">¼ºÀÎ 1¸í</div>
-						<div class="price">10000¿ø</div>
 					</div>
-				</div>
-			</div>
-
-			<div class="reservation-item">
-				<div class="reservation-poster">ÀÌ¹ÌÁö</div>
-				<input type="button" value="¿¹¸ÅÃë¼Ò">
-				<div class="reservation-ticket">
-					<div class="bgImg">
-						<div class="movieTitle">·¹ÀÌ´Ï µ¥ÀÌ ÀÎ ´º¿å</div>
-						<div class="roomAndSit">
-							<div class="room">5°ü</div>
-							<div class="sit">D°ü 3¿­</div>
-						</div>
-
-						<div class="dateMovieTime">
-							<div class="buyDate">2020-05-13</div>
-							<div class="startTime">¿ÀÈÄ 1:30</div>
-							<div class="endTime">¿ÀÈÄ 3:30</div>
-						</div>
-
-						<div class="adultAge">¼ºÀÎ 1¸í</div>
-						<div class="price">10000¿ø</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="reservation-item">
-				<div class="reservation-poster">ÀÌ¹ÌÁö</div>
-				<input type="button" value="¿¹¸ÅÃë¼Ò">
-				<div class="reservation-ticket">Æ¼ÄÏ</div>
-			</div>
-
-			<div class="reservation-item">
-				<div class="reservation-poster">ÀÌ¹ÌÁö</div>
-				<input type="button" value="¿¹¸ÅÃë¼Ò">
-				<div class="reservation-ticket">Æ¼ÄÏ</div>
-			</div>
+				</c:forEach>
+			</c:if>
+			
 
 		</div>
 	</div>
