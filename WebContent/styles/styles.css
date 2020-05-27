@@ -123,6 +123,7 @@ body{
     cursor: pointer;
     width: fit-content;
     display: flex;
+    
 }
 
 .header-right-down{
@@ -134,6 +135,7 @@ body{
 
 .header-right-down .item{
     margin-right: 10px;
+    cursor:pointer;
 }
 
 .cal-login{
@@ -167,6 +169,7 @@ body{
 }
 
 .card{
+	position:relative;
     width: 200px;
     height: 335px;
     margin-right: 15px;
@@ -180,10 +183,70 @@ body{
     width: 100%;
     height: 85%;
     border-radius: 10px;
+
 }
+
 
 .card-info-wrapper{
     display: flex;
+}
+
+.filter{
+	position: absolute;
+    width: 100%;
+    height: 85%;
+    z-index: 1;
+    top: 4px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    padding: 70px 0px;
+    background-color: #00000078;
+    border-radius: 10px;
+}
+
+.youtube-review-btn{
+	cursor:pointer;
+}
+
+.naver-review-btn{
+	cursor:pointer;
+}
+
+.vidio-wrapper{
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    background-color: #00000052;
+    display: none;
+    flex-direction:column;
+}
+
+.vidio{
+    width: 70%;
+    height: 80%;
+    resize: both;
+}
+
+.vidio-wrapper .vidio-close{
+	width: 80%;
+    text-align: right;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 28px;
+    padding-right: 10px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #fff;
+    opacity: .5;
+    cursor:pointer;
+}
+
+.vidio-show{
+	display:flex;
 }
 
 .like{

@@ -140,7 +140,7 @@ public class DBConnect extends HttpServlet {
 
 		} catch(Exception e) {
 
-			System.out.println(e.getMessage());
+			System.out.println("from DBConnect : "+e.getMessage());
 
 		}
 

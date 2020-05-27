@@ -75,6 +75,7 @@ public class YoutubeReview extends HttpServlet {
 					youtubeTitle[j] = vidTitle1;
 					
 				} else {
+					youtubeSrc[j] = "notSearch";
 					System.out.println("영화 리뷰 없음");
 					System.out.println();
 				}

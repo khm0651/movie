@@ -59,13 +59,13 @@
                 <div class="header-right-down">
                     
                     <div class="item-wrapper">
-                        <div class="item">
-                           	극장 
+                        <div class="item review">
+                           	리뷰 
                         </div>
                         <div class="item">
                             게시판
                         </div>
-                        <div class="item">
+                        <div class="item random">
                             랜덤예매
                         </div>
                     </div>

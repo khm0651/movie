@@ -51,8 +51,6 @@ for(int m = 0; m < movieCode.length; m++) {
 <%
 }
 
-
-
 JnoodleDBconn.close(conn);
 %>
 </body>

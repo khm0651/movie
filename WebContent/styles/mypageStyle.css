@@ -6,7 +6,7 @@
 .bgImg {
 	width: 520px;
     height: 210px;
-    background-image: url(./img/movieTicket.png);
+    background-image: url(../img/movieTicket.png);
     margin-left: 10px;
     background-repeat: no-repeat;
     background-size: 527px 241px;

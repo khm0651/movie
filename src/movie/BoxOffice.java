@@ -123,11 +123,16 @@ public class BoxOffice extends HttpServlet {
 			String date = yearFormat.format(new Date());
 			
 			try {
+				System.out.println("1");
 				String dburl = "jdbc:apache:commons:dbcp:wdbpool";
 				conn = DriverManager.getConnection(dburl);
+				System.out.println("2");
 				stmt = conn.createStatement();
+				System.out.println("3");
 				stmt.executeUpdate("delete from boxOfficeList");
+				System.out.println("4");
 				stmt.executeUpdate("delete from movieTimeLine");
+				System.out.println("5");
 				for(int i =0; i<dList.size();i++) {
 					String query = "insert into boxOfficeList values('"+dList.get(i).rnum+"','"+dList.get(i).rank+"','"+dList.get(i).rankInten+"','"+dList.get(i).rankOldAndNew+"','"+dList.get(i).movieCd+"','"+dList.get(i).movieNm+"','"+dList.get(i).openDt+"','"+dList.get(i).salesAmt+"','"+dList.get(i).salesShare+"','"+dList.get(i).salesInten+"','"+dList.get(i).salesChange+"','"+dList.get(i).salesAcc+"','"+dList.get(i).audiCnt+"','"+dList.get(i).audiInten+"','"+dList.get(i).audiChange+"','"+dList.get(i).audiAcc+"','"+dList.get(i).scrnCnt+"','"+dList.get(i).showCnt+"','"+dList.get(i).poster+"')";
 					int rs = stmt.executeUpdate(query);
@@ -160,7 +165,7 @@ public class BoxOffice extends HttpServlet {
 				
 				
 			}catch(SQLException e){
-				System.out.println(e.getMessage());
+				System.out.println("from BoxOffice : "+e.getMessage());
 				e.getStackTrace();
 			}finally {
 				try {
@@ -168,7 +173,7 @@ public class BoxOffice extends HttpServlet {
 					if(conn != null) conn.close();
 				}
 				catch (SQLException e) {
-					System.out.println(e.getMessage());
+					System.out.println("from BoxOffice : "+e.getMessage());
 				}
 				
 			}
