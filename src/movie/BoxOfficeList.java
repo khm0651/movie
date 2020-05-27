@@ -77,7 +77,7 @@ public class BoxOfficeList extends HttpServlet {
 				Elements vidItems1 = doc1.select(".rc .rGhul");
 				String[] vidCode1 = vidItems1.get(0).attr("href").split("=");
 				
-				String vid1 = "https://www.youtube.com/embed/" + vidCode1[1];
+				String vid1 = "https://www.youtube.com/embed/" + vidCode1[1]+ "?autoplay=1&mute=1";
 				Elements vidTitleEl1 = doc1.select(".rc .r .LC20lb");
 				String vidTitle1 = vidTitleEl1.get(0).text();
 				if(vidTitle1.contains(movieName[j])) {

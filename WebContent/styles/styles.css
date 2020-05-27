@@ -227,13 +227,13 @@ body{
 }
 
 .vidio{
-    width: 70%;
-    height: 80%;
+	width: 1195px;
+    height: 621px;
     resize: both;
 }
 
 .vidio-wrapper .vidio-close{
-	width: 80%;
+	width: 1195px;
     text-align: right;
     margin-bottom: 10px;
     color: white;
@@ -1090,4 +1090,82 @@ body{
     align-items: center;
     font-size: 24px;
     font-weight: bold;
+}
+
+.review-wrapper{
+	padding: 100px 215px;
+}
+
+.review-wrapper .title{
+	font-size: 24px;
+    font-weight: bold;
+}
+
+.review-wrapper .sub-title{
+	font-size: 14px;
+    margin-top: 10px;
+}
+
+.review-content{
+	display: flex;
+    flex-wrap: wrap;
+	margin-top:20px;
+}
+
+.vidioForm{
+	width: 230px;
+    height: fit-content;
+    margin-right: 20px;
+    margin-bottom: 40px;
+}
+
+.vidioForm .review-vidio{
+	height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+    cursor:pointer;
+}
+
+.review-vidio-modal{
+	top: 0;
+    left: 0;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000073;
+    flex-direction: column;
+}
+
+.review-vidio-modal-show{
+	display:flex;
+}
+
+.vidioForm .vidio-title{
+	margin-top: 10px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.review-vidio-modal .modal-vidio{
+	width: 1195px;
+    height: 621px;
+    resize: both;
+}
+
+.review-vidio-modal .vidio-close{
+	width: 1195px;
+    text-align: right;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 28px;
+    padding-right: 10px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #fff;
+    opacity: .5;
+    cursor:pointer;
 }

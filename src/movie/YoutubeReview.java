@@ -63,7 +63,7 @@ public class YoutubeReview extends HttpServlet {
 			String[] youtubeTitle = new String[10]; // youtube ï¿½ï¿½ï¿½ï¿½
 
 			for (int j = 0; j < movieName.length; j++) {
-				Document doc1 = Jsoup.connect("https://www.google.com/search?q=youtube: " + movieName[j] + " ï¿½ï¿½È­ ï¿½ï¿½ï¿½ï¿½&source=lnms&tbm=vid").get();
+				Document doc1 = Jsoup.connect("https://www.google.com/search?q=youtube: " + movieName[j] + " ¿µÈ­ ¸®ºä&source=lnms&tbm=vid").get();
 				Elements vidItems1 = doc1.select(".rc .rGhul");
 				String[] vidCode1 = vidItems1.get(0).attr("href").split("=");
 				
@@ -76,7 +76,7 @@ public class YoutubeReview extends HttpServlet {
 					
 				} else {
 					youtubeSrc[j] = "notSearch";
-					System.out.println("ï¿½ï¿½È­ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
+					System.out.println("¿µÈ­ ¸®ºä ¾øÀ½");
 					System.out.println();
 				}
 			}
