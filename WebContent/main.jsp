@@ -1,4 +1,4 @@
-<%@page import="com.sun.org.apache.bcel.internal.generic.INSTANCEOF"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -22,7 +22,7 @@
 
         <%@include file = "./header.jsp" %>
         
-        
+       
         <div class="main-slider">
             <div class="slider">
                 <img src="./img/poster1.jpg" class="main-slider-img">
@@ -44,8 +44,7 @@
 					<c:forEach var="i" begin="0" end="${bol.listSize -1 }">
 						<div class="card">
                 
-                    <img src="${bol.movieImg[i] }" class="img">
-                    
+                    <img src="${bol.movieImg[i] }" class="img" alt="${vidCodeArr[i] }">
     
                     <div class="card-info-wrapper">
                         <div class="like">
@@ -96,7 +95,7 @@
         </div>
 
     </div>
-
+	
     <script src="js/index.js"></script>
     <script src="./js/header.js"></script>
 

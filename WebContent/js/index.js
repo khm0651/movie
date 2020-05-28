@@ -32,7 +32,6 @@ makeFilter = (parent) =>{
 }
 
 
-
 for(let i = 0; i<img.length; i++){
 	img[i].addEventListener("mouseover",e=>{
 		if(!showFilter){
@@ -43,7 +42,8 @@ for(let i = 0; i<img.length; i++){
 				showFilter=false;
 			});
 			filter.children[0].addEventListener("click",e=>{
-				
+				console.log(img[i].getAttribute("alt"));
+				location.href = "http://localhost:8080/BigGates_MovieProject/MoviePreview?c=" + img[i].getAttribute("alt");
 			})
 			filter.children[1].addEventListener("click",e=>{
 				
