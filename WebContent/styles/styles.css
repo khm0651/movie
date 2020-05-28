@@ -4,7 +4,7 @@ html{
 
 a{
     text-decoration: none;
-	color: #e9eef2;
+	color: white;
 }
 
 body{
@@ -183,7 +183,7 @@ body{
     width: 100%;
     height: 85%;
     border-radius: 10px;
-
+	box-shadow: 1px 1px 8px 1px #00000087;
 }
 
 
@@ -301,7 +301,7 @@ body{
 
 .movie-search{
     display: flex;
-    width: 25%;
+    width: 33%;
     justify-content: center;
     align-items: center;
     margin-top: 15px;
@@ -311,35 +311,25 @@ body{
 
 .movie-cal{
     display: flex;
-    width: 25%;
+    width: 33%;
     justify-content: center;
     align-items: center;
     margin-top: 15px;
     margin-bottom: 15px;
     border-right: 1px solid;
-    color: white;
+
 }
 
 .box-office{
     display: flex;
-    width: 25%;
+    width: 33%;
     justify-content: center;
     align-items: center;
     margin-top: 15px;
     margin-bottom: 15px;
-    border-right: 1px solid;
-    color: white;
 }
 
-.rappid{
-    display: flex;
-    width: 25%;
-    justify-content: center;
-    align-items: center;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    color: white;
-}
+
 
 .movie-search-input{
     background: none;
@@ -1168,4 +1158,35 @@ body{
     text-shadow: 1px 1px 1px #fff;
     opacity: .5;
     cursor:pointer;
+}
+
+
+.boxOffice-content{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: space-between;
+    margin-top: 20px;
+    background-color: #0000001f;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px black;
+}
+
+.boxOffice-content .card{
+	margin-bottom:40px;
+	transition : all 0.2s linear;
+	opacity: 0;
+}
+
+.boxOffice-content .card-show{
+	opacity: 1;
+}
+
+.boxOffice-content .card:hover{
+	transform:scale(1.05);
+}
+
+.review-wrapper .boxOffice{
+	font-size: 12px;
+    font-weight: bold;
 }

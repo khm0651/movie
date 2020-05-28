@@ -16,9 +16,9 @@
 
                     </div>
                     <div class="item-wrapper">
-                        <div class="item">
+                        <a  href="./viewBoxOffice" class="item">
                             영화 
-                        </div>
+                        </a>
                         <a href="./bookingTime" class="item">
                             예매
                         </a>

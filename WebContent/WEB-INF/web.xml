@@ -117,5 +117,14 @@ id="WebApp_ID" version="4.0">
     <servlet-name>Review </servlet-name>
     <url-pattern>/review </url-pattern>
   </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>viewBoxOffice </servlet-name>
+    <servlet-class>movie.BoxOfficeTop</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>viewBoxOffice </servlet-name>
+    <url-pattern>/viewBoxOffice </url-pattern>
+  </servlet-mapping>  
     
 </web-app>

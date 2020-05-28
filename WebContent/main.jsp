@@ -81,18 +81,14 @@
 
                 <div class="movie-cal">
                     <img src="./img/ico-schedule-white.png" alt="">
-                    <div class="title">상영시간표</div>
+                    <a href="./bookingTime" class="title">상영시간표</a>
                 </div>
 
                 <div class="box-office">
                     <img src="./img/ico-sitemap-white.png" alt="">
-                    <div class="title">박스오피스</div>
+                    <a href="./viewBoxOffice" class="title">박스오피스</a>
                 </div>
 
-                <div class="rappid">
-                    <img src="./img/ico-mymega-white.png" alt="">
-                    <div class="title">빠른예매</div>
-                </div>
 
             </div>
             
