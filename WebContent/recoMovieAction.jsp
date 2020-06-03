@@ -1,4 +1,4 @@
-<%@ page import="com.project.movieProject.DBconn"%>
+<%@ page import="movie.JnoodleDBconn"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.PreparedStatement"%>
 
@@ -16,7 +16,7 @@
 	String recoMovie[] = request.getParameterValues("checkbox");
 	String recoMovieList[] = new String[40];
 
-	Connection conn = DBconn.getMySQLConnection();
+	Connection conn = JnoodleDBconn.getMySQLConnection();
 	String sql = "insert into intermovietable values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	PreparedStatement pstmt = null;
 
@@ -80,8 +80,8 @@
 
 		}
 
-		DBconn.close(pstmt);
-		DBconn.close(conn);
+		JnoodleDBconn.close(pstmt);
+		JnoodleDBconn.close(conn);
 	%>
 	<script>
 		alert("나의 관심영화 목록을 확인하세요!");
