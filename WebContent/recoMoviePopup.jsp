@@ -104,7 +104,7 @@
 	%>
 	<div class="container">
 		<div class="jumbotron">
-			<form id="recoMovieForm" action="recoMovieAction.jsp" method="post" class="form-wrapper">
+			<form id="recoMovieForm" action="recoMovieAction" method="post" class="form-wrapper">
 				<%
 					String recoMovie[] = new String[5];
 				String splitStr = "^";

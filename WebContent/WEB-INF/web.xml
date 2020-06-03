@@ -126,5 +126,23 @@ id="WebApp_ID" version="4.0">
     <servlet-name>viewBoxOffice </servlet-name>
     <url-pattern>/viewBoxOffice </url-pattern>
   </servlet-mapping>  
+  
+  <servlet>
+    <servlet-name>recoMovieAction </servlet-name>
+    <servlet-class>movie.RecoMovieAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>recoMovieAction </servlet-name>
+    <url-pattern>/recoMovieAction </url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>moviePreview </servlet-name>
+    <servlet-class>movie.MoviePreview</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>moviePreview </servlet-name>
+    <url-pattern>/moviePreview </url-pattern>
+  </servlet-mapping>
     
 </web-app>

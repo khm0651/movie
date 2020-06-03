@@ -19,7 +19,7 @@
 <body>
 
 	<div id="container">
-		<form action="recoMovieAction.jsp" method="post">
+		<form action="recoMovieAction" method="post">
 			<div class="lst_wrap">
 				<div class="lst_detail_t1">
 					<!-- Modal -->
