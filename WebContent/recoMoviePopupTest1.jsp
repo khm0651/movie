@@ -2,7 +2,6 @@
 <%@ page import="org.jsoup.nodes.Document"%>
 <%@ page import="org.jsoup.nodes.Element"%>
 <%@ page import="org.jsoup.select.Elements"%>
-
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -31,7 +30,7 @@
 								<div class="modal-header">
 									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 									<h4 class="modal-title">
-									<img class="titleLogoImg" src="./images/smallMovieLogo2.png">
+									<img class="titleLogoImg" src="./img/smallMovieLogo2.png">
 									오늘의 추천 영화
 									</h4>
 
@@ -43,7 +42,7 @@
 										<div class="carousel-inner">
 											<div class="item active">
 												<div>
-													<img class="firstImg" src="./images/movieLogo2.png">
+													<img class="firstImg" src="./img/movieLogo2.png">
 												</div>
 												
 											</div>
@@ -186,11 +185,12 @@
 										</a>
 
 									</div>
-								</div>
-
+								
+								<% if(session.getAttribute("LOGIN_ID") != null) { %>
 								<div class="modal-footer">
 									<input type="submit" class="btn btn-default" value="관심 영화 등록" />
 								</div>
+								<% } %>
 							</div>
 							<!-- /.modal-content -->
 						</div>

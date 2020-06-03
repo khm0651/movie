@@ -3,6 +3,7 @@ package movie;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -33,6 +34,19 @@ public class Mypage extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+    String[] interMovieId = null;
+    String[] thumbImgSrc = null;
+	String[] movieAge = null;
+	String[] movieDetailHref = null;
+	String[] movieTitle = null;
+	String[] movieScore = null;
+	String[] movieScoreNum1 = null;
+	String[] movieScoreNum2 = null;
+	String[] movieRating = null;
+	String[] movieOutline = null;
+	String[] movieDirector = null;
+	String[] movieActor = null;
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
@@ -41,6 +55,12 @@ public class Mypage extends HttpServlet {
 		MypageReservationDTO dto = new MypageReservationDTO();
 		Connection conn =null;
 		Statement stmt = null;
+		
+		Statement stmtInterMovieList = null;
+		ResultSet rsInterMovieList = null;
+		
+		Statement stmtCnt = null;
+		ResultSet rsCnt = null;
 		try {
 			String dburl = "jdbc:apache:commons:dbcp:wdbpool";
 			conn = DriverManager.getConnection(dburl);
@@ -58,8 +78,54 @@ public class Mypage extends HttpServlet {
 				dto.setSit(rs.getString("sit"));
 				dto.setBuyDate(rs.getString("buydate"));
 				dto.setPoster(rs.getString("poster"));
-				
 			}
+			
+			// 관심 영화 목록 {
+			stmtInterMovieList = conn.createStatement();
+			String sqlInterMovieList = "select * from intermovietable where movieUserId = '" + user + "'";
+			rsInterMovieList = stmtInterMovieList.executeQuery(sqlInterMovieList);
+			
+			
+			stmtCnt = conn.createStatement();
+			String sqlCnt = "select count(*) from intermovietable where movieUserId = '" + user + "'";
+			rsCnt = stmtCnt.executeQuery(sqlCnt);
+			
+			int rsCntResult = 0;
+			if(rsCnt.next()) {
+				rsCntResult = rsCnt.getInt(1);
+			}
+			
+			interMovieId = new String[rsCntResult];
+			thumbImgSrc = new String[rsCntResult];
+			movieAge = new String[rsCntResult];
+			movieDetailHref = new String[rsCntResult];
+			movieTitle = new String[rsCntResult];
+			movieScore = new String[rsCntResult];
+			movieScoreNum1 = new String[rsCntResult];
+			movieScoreNum2 = new String[rsCntResult];
+			movieRating = new String[rsCntResult];
+			movieOutline = new String[rsCntResult];
+			movieDirector = new String[rsCntResult];
+			movieActor = new String[rsCntResult];
+			
+			int i = 0;
+			while(rsInterMovieList.next()) {
+				interMovieId[i] = rsInterMovieList.getString("interMovieId");
+				thumbImgSrc[i] = rsInterMovieList.getString("thumbImgSrc");
+				movieAge[i] = rsInterMovieList.getString("movieAge");
+				movieDetailHref[i] = rsInterMovieList.getString("movieDetailHref");
+				movieTitle[i] = rsInterMovieList.getString("movieTitle");
+				movieScore[i] = rsInterMovieList.getString("movieScore");
+				movieScoreNum1[i] = rsInterMovieList.getString("movieScoreNum1");
+				movieScoreNum2[i] = rsInterMovieList.getString("movieScoreNum2");
+				movieRating[i] = rsInterMovieList.getString("movieRating");
+				movieOutline[i] = rsInterMovieList.getString("movieOutline");
+				movieDirector[i] = rsInterMovieList.getString("movieDirector");
+				movieActor[i] = rsInterMovieList.getString("movieActor");
+				i++;
+			}
+			// }
+			
 		}catch(SQLException e) {
 			System.out.println("from Mypage : "+e.getMessage());
 		}finally {
@@ -71,7 +137,23 @@ public class Mypage extends HttpServlet {
 			}
 		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher("./mypage.jsp");
+		
 		request.setAttribute("reservation", dto);
+		
+		request.setAttribute("interMovieSize", interMovieId.length);
+		request.setAttribute("interMovieId", interMovieId);
+		request.setAttribute("thumbImgSrc", thumbImgSrc);
+		request.setAttribute("movieAge", movieAge);
+		request.setAttribute("movieDetailHref", movieDetailHref);
+		request.setAttribute("movieTitle", movieTitle);
+		request.setAttribute("movieScore", movieScore);
+		request.setAttribute("movieScoreNum1", movieScoreNum1);
+		request.setAttribute("movieScoreNum2", movieScoreNum2);
+		request.setAttribute("movieRating", movieRating);
+		request.setAttribute("movieOutline", movieOutline);
+		request.setAttribute("movieDirector", movieDirector);
+		request.setAttribute("movieActor", movieActor);
+		
 		dispatcher.forward(request, response);
 	}
 
