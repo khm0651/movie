@@ -127,6 +127,7 @@ id="WebApp_ID" version="4.0">
     <url-pattern>/viewBoxOffice </url-pattern>
   </servlet-mapping>  
   
+<<<<<<< HEAD
    <servlet>
     <servlet-name>Preview </servlet-name>
     <servlet-class>movie.MoviePreview</servlet-class>
@@ -145,4 +146,24 @@ id="WebApp_ID" version="4.0">
     <url-pattern>/totalReview </url-pattern>
   </servlet-mapping>  
       
+=======
+  <servlet>
+    <servlet-name>recoMovieAction </servlet-name>
+    <servlet-class>movie.RecoMovieAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>recoMovieAction </servlet-name>
+    <url-pattern>/recoMovieAction </url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>moviePreview </servlet-name>
+    <servlet-class>movie.MoviePreview</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>moviePreview </servlet-name>
+    <url-pattern>/moviePreview </url-pattern>
+  </servlet-mapping>
+    
+>>>>>>> refs/remotes/origin/master
 </web-app>

@@ -9,7 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insert title here</title>
+<title>FAST MOVIE</title>
 <link rel="stylesheet" type="text/css" href="./styles/recoMoviePopupStyle.css">
 
 <!-- 합쳐지고 최소화된 최신 CSS -->
@@ -104,7 +104,7 @@
 	%>
 	<div class="container">
 		<div class="jumbotron">
-			<form id="recoMovieForm" action="recoMovieAction.jsp" method="post" class="form-wrapper">
+			<form id="recoMovieForm" action="recoMovieAction" method="post" class="form-wrapper">
 				<%
 					String recoMovie[] = new String[5];
 				String splitStr = "^";
@@ -167,11 +167,13 @@
 
 
 		</div>
+		<% if(session.getAttribute("LOGIN_ID") != null) { %>
 		<div class="submitBtn">
 			<p>
 				<input class="btn btn-lg btn-success" id="submitBtn" type="button" value="관심 영화 등록" />
 			</p>
 		</div>
+		<% } %>
 	</div>
 	<script>
 		const submitBtn = document.getElementById("submitBtn");
