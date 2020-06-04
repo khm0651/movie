@@ -118,6 +118,10 @@ body{
     font-weight: bold;
 }
 
+.header-right-up a{
+    color: #e9eef2;
+}
+
 .header-right-up .item{
 	margin: 10px;
     cursor: pointer;
@@ -136,6 +140,7 @@ body{
 .header-right-down .item{
     margin-right: 10px;
     cursor:pointer;
+    color: white;
 }
 
 .cal-login{
@@ -297,6 +302,20 @@ body{
     background-color: rgba(255, 255, 255, 0.08);
     height: 65px;
     border-radius: 15px;
+}
+
+.content-menu-wrapper a{
+    color:white;
+}
+
+.movie-search-index{
+    display: flex;
+    width: 33%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-right: 1px solid;
 }
 
 .movie-search{
@@ -1083,7 +1102,7 @@ body{
 }
 
 .review-wrapper{
-	padding: 100px 215px;
+	padding: 10px 215px 100px;
 }
 
 .review-wrapper .title{
@@ -1116,6 +1135,14 @@ body{
     align-items: center;
     border: 1px solid;
     cursor:pointer;
+    position: relative;
+}
+
+.click-vidio{
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
 }
 
 .review-vidio-modal{
@@ -1133,6 +1160,7 @@ body{
 
 .review-vidio-modal-show{
 	display:flex;
+	z-index: 1000;
 }
 
 .vidioForm .vidio-title{
@@ -1165,7 +1193,7 @@ body{
     display: flex;
     flex-wrap: wrap;
     padding: 10px;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-top: 20px;
     background-color: #0000001f;
     border-radius: 20px;
@@ -1189,4 +1217,388 @@ body{
 .review-wrapper .boxOffice{
 	font-size: 12px;
     font-weight: bold;
+}
+
+/* Arang */
+
+/* 상단 바*/
+.black-bar {
+    display: flex;
+    padding-top: 102px;
+
+}
+
+.black-bar-down {
+    width: 100%;
+    height: 42px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #f8f8fa;
+    padding-left: 14vw;
+    padding-right: 14vw;
+}
+
+.black-bar-down>p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.homeimg {
+    width: 19px;
+    height: 19px;
+}
+
+.black-bar-down>a {
+    font-style: normal;
+    color: black;
+}
+
+/* 중단 '전체영화'*/
+.textBar {
+    display: flex;
+    font-size: 30px;
+    padding-left: 14vw;
+    padding-right: 14vw;
+}
+
+.all-movies {
+    display: flex;
+}
+
+/* 하단 버튼 4개 탭 */
+@media (max-width:1920px) {
+    .movListButton {
+        display: flex;
+        margin-left: 14vw;
+        margin-right: 14vw;
+    }
+
+    .movListButton ul {
+        padding-inline-start: 0px;
+    }
+
+    .topMenu {
+        display: flex;
+        justify-content: flex-start;
+        min-width: 1120px;
+    }
+
+    .topMenu li {
+        display: flex;
+        height: 41px;
+        width: 18vw;
+        min-width: 280px;
+        max-width: 344px;
+    }
+
+    .topMenu li a {
+        padding-top: 10px;
+        text-decoration: none;
+        color: black;
+        font-size: 1.00667em;
+        width: 100%;
+        max-width: 344px;
+        text-align: center;
+        background-color: white;
+    }
+
+    .topMenu>li>a {
+        list-style-type: none;
+        border-top: 1px dotted #666;
+        border-left: 1px dotted #666;
+        border-right: 1px dotted #666;
+        border-bottom: 1px solid #503396;
+    }
+
+    .topMenu>li>a:hover {
+        color: #503396;
+        border-top: 1px solid #503396;
+        border-left: 1px solid #503396;
+        border-right: 1px solid #503396;
+        border-bottom: 1px solid white;
+    }
+
+    .topMenu>.on>a {
+        color: #503396;
+        border-top: 1px solid #503396;
+        border-left: 1px solid #503396;
+        border-right: 1px solid #503396;
+        border-bottom: 1px solid white;
+    }
+
+
+    .searchBar {
+        display: flex;
+        padding-left: 14vw;
+        padding-right: 14vw;
+        margin-top: 40px;
+        margin-bottom: 15px;
+        min-width: 1120px;
+        justify-content: space-between;
+    }
+
+    .searchBar p {
+        margin-top: 0;
+        margin-bottom: 0;
+        height: 18px;
+    }
+
+    .searchBarIn {
+        display: flex;
+        background-color: lavenderblush;
+        justify-content: flex-start;
+    }
+
+    .onair-condition .btn-onair {
+        display: block;
+        padding: 0 0 0 30px;
+        background: url(https://img.megabox.co.kr/static/pc/images/common/btn/btn-on-air.png) no-repeat 0 2px;
+        box-shadow: none;
+        border: none;
+        justify-content: flex-start;
+        float: left;
+    }
+
+    .flo {
+        float: left;
+        margin-left: 20px;
+    }
+
+    .onair-condition .btn-onair.on {
+        background-position: 0 -17px;
+    }
+
+    .movie-search {
+        height: 18px;
+        display: flex;
+        position: relative;
+        align-items: flex-end;
+        width: 220px;
+        min-width: 220px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        border-right: 0px solid;
+    }
+}
+
+@media (max-width:1608px) {
+    .movListButton {
+        display: flex;
+        margin-left: 14vw;
+        margin-right: 14vw;
+    }
+
+    .movListButton ul {
+        padding-inline-start: 0px;
+    }
+
+    .topMenu {
+        display: flex;
+        justify-content: flex-start;
+        min-width: 1157.78px;
+    }
+
+    .topMenu li {
+        display: flex;
+        height: 41px;
+        width: 18vw;
+        min-width: 289.44px;
+        max-width: 344px;
+    }
+
+    .topMenu li a {
+        padding-top: 10px;
+        text-decoration: none;
+        color: black;
+        font-size: 1.00667em;
+        width: 100%;
+        max-width: 344px;
+        text-align: center;
+        background-color: white;
+    }
+
+    .topMenu>li>a {
+        list-style-type: none;
+        border-top: 1px dotted #666;
+        border-left: 1px dotted #666;
+        border-right: 1px dotted #666;
+        border-bottom: 1px solid #503396;
+    }
+
+    .topMenu>li>a:hover {
+        color: #503396;
+        border-top: 1px solid #503396;
+        border-left: 1px solid #503396;
+        border-right: 1px solid #503396;
+        border-bottom: 1px solid white;
+    }
+
+    .topMenu>.on>a {
+        color: #503396;
+        border-top: 1px solid #503396;
+        border-left: 1px solid #503396;
+        border-right: 1px solid #503396;
+        border-bottom: 1px solid white;
+    }
+
+
+    .searchBar {
+        display: flex;
+        padding-left: 14vw;
+        padding-right: 14vw;
+        margin-top: 40px;
+        margin-bottom: 15px;
+        min-width: 1157.78px;
+        justify-content: space-between;
+    }
+
+    .searchBar p {
+        margin-top: 0;
+        margin-bottom: 0;
+        height: 18px;
+    }
+
+    .searchBarIn {
+        display: flex;
+        background-color: lavenderblush;
+        justify-content: flex-start;
+    }
+
+    .onair-condition .btn-onair {
+        display: block;
+        padding: 0 0 0 30px;
+        background: url(https://img.megabox.co.kr/static/pc/images/common/btn/btn-on-air.png) no-repeat 0 2px;
+        box-shadow: none;
+        border: none;
+        justify-content: flex-start;
+        float: left;
+    }
+
+    .flo {
+        float: left;
+        margin-left: 20px;
+    }
+
+    .onair-condition .btn-onair.on {
+        background-position: 0 -17px;
+    }
+
+    .movie-search {
+        height: 18px;
+        display: flex;
+        position: relative;
+        align-items: flex-end;
+        width: 220px;
+        min-width: 220px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        border-right: 0px solid;
+    }
+
+}
+
+
+/* 최하단 영화 목록 */
+.movList {
+    display: flex;
+    margin-left: 7vw;
+    margin-right: 7vw;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.movList ol {
+    margin: 0px;
+    display: flex;
+}
+
+.movList ol li {
+    list-style: none;
+    float: left;
+    overflow: hidden;
+    min-width: 230px;
+
+}
+
+.movieRank {
+    padding: 0px;
+
+}
+
+@media (max-width:1920px) {
+    .movieRank li {
+        width: 300px;
+        padding-left: 80px;
+    }
+
+    .movieInfo img {
+        min-width: 270px;
+        height: 350px;
+    }
+}
+
+
+@media (max-width:1680px) {
+    .movieRank li {
+        width: 230px;
+        padding-left: 80px;
+    }
+
+    .movieInfo img {
+        min-width: 230px;
+        height: 340px;
+    }
+}
+
+/* 영화 설명*/
+
+.tit-area{
+    margin-top: 2px;
+    display: flex;
+    padding-bottom: 3px;
+}
+
+.tit{
+    margin: 0px;
+    margin-left: 10px;
+    
+    font-size: 20px;
+    width: 207px;
+}
+
+.openDate{
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.openDate span:nth-child(2){
+    margin-left: 4px;
+}
+
+/* 연령제한 */
+.movie-grade {
+    overflow: hidden;
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    margin: 0;
+    padding: 0;
+    text-indent: -9999px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.movie-grade.age-all {
+    background-image: url(https://img.megabox.co.kr/static/pc/images/common/txt/txt-age-all.png);
+}
+
+.movie-grade.age-12 {
+    background-image: url(https://img.megabox.co.kr/static/pc/images/common/txt/txt-age-12.png);
+}
+.movie-grade.age-15 {
+    background-image: url(https://img.megabox.co.kr/static/pc/images/common/txt/txt-age-15.png);
+}
+.movie-grade.age-19{
+    background-image: url(https://img.megabox.co.kr/static/pc/images/common/txt/txt-age-19.png);
 }

@@ -40,7 +40,7 @@
 							if(session.getAttribute("LOGIN_ID") != null){
 								out.println("<div class='item'><a href='./logout'>로그아웃</a></div>");
 							}else{
-								out.println("<div class='item sign-in'>로그인</div>");
+								out.println("<a class='item sign-in'>로그인</a>");
 							}
 						%>
                     <div class = "item sign-up">
@@ -59,15 +59,15 @@
                 <div class="header-right-down">
                     
                     <div class="item-wrapper">
-                        <div class="item review">
+                        <a href = "./totalReview" class="item review">
                            	리뷰 
-                        </div>
-                        <div class="item">
+                        </a>
+                        <a class="item">
                             게시판
-                        </div>
-                        <div class="item random">
+                        </a>
+                        <a class="item random">
                             랜덤예매
-                        </div>
+                        </a>
                     </div>
                     
                     <div class="cal-login">

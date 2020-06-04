@@ -78,9 +78,9 @@ public class BoxOfficeList extends HttpServlet {
 			String[] vidCode1 = new String[2];
 			
 			for (int j = 0; j < movieName.length; j++) {
-				Document doc1 = Jsoup.connect("https://www.google.com/search?q=youtube: " + movieName[j] + " ì˜í™” ë¦¬ë·°&source=lnms&tbm=vid").get();
+				Document doc1 = Jsoup.connect("https://www.google.com/search?q=youtube: " + movieName[j] + " ¿µÈ­ ¸®ºä&source=lnms&tbm=vid").get();
 				Elements vidItems1 = doc1.select(".rc .rGhul");
-				// ì˜í™” í¬ìŠ¤í„° ì£¼ì†Œì—ì„œ ê°€ì ¸ì˜¨ ì˜í™” ì½”ë“œ ê°’ 
+
 				vidCode1 = vidItems1.get(0).attr("href").split("=");
 				String vid1 = "https://www.youtube.com/embed/" + vidCode1[1]+ "?autoplay=1&mute=1";
 				Elements vidTitleEl1 = doc1.select(".rc .r .LC20lb");
@@ -91,7 +91,7 @@ public class BoxOfficeList extends HttpServlet {
 					
 				} else {
 					youtubeSrc[j] = "notSearch";
-					System.out.println("ï¿½ï¿½È­ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
+					System.out.println("¿µÈ­ ¸®ºä ¾øÀ½");
 					System.out.println();
 				}
 			}

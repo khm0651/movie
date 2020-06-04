@@ -43,7 +43,7 @@ for(let i = 0; i<img.length; i++){
 			});
 			filter.children[0].addEventListener("click",e=>{
 				console.log(img[i].getAttribute("alt"));
-				location.href = "http://localhost:8080/BigGates_MovieProject/MoviePreview?c=" + img[i].getAttribute("alt");
+				location.href = "./moviePreview?c=" + img[i].getAttribute("alt");
 			})
 			filter.children[1].addEventListener("click",e=>{
 				
@@ -89,7 +89,7 @@ $(document)
 						//모바일로 접속시 이동 경로
 					} else {
 						var popUrl = "./recoMoviePopup.jsp";
-						var popOption = "width=680px, height=380px, resizable=no, location=no, top=300px, left=300px;"
+						var popOption = "width=680px, height=380px, resizable=no, location=no, top=300px, left=300px, location=no, menubar=no, resizable=no, scrollbars=no, status=no, toolbar=no;"
 
 						window.open(popUrl, "추천영화", popOption);
 						//PC로 접속시 이동 경로

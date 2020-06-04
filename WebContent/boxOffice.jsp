@@ -12,14 +12,50 @@
 </head>
 <body>
 	<%@ include file="./header.jsp" %>
+	
+	<div class="boxoffice-wrapper">
+
+
+        <div class="black-bar">
+            <div class="black-bar-down">
+                <span>
+                    <img class="homeimg" src="img/home.png" class="logo">
+                </span>
+                <a href="#">&nbsp;&nbsp;>&nbsp; 영화</a>
+                <a href="movie.html">&nbsp;&nbsp;>&nbsp; 전체영화</a>
+            </div>
+        </div>
+
+        <div class="textBar">
+            <p>전체영화</p>
+        </div>
+    </div>
+
+    <div class="movListButton">
+        <ul class="topMenu">
+            <li class="on"><a href="movie.html">박스오피스</a></li>
+            <li><a href="comingsoon.html">상영예정작</a></li>
+            <li><a href="#">추천영화</a></li>
+            <li><a href="#">랜덤영화</a></li>
+
+        </ul>
+    </div>
+    
+    <div class="searchBar">
+        <div class="onair-condition">
+            <button type="button" title="전체 영화 보기" class="btn-onair btnOnAir on">개봉작만</button>
+            <p class="flo">10개의 영화가 검색되었습니다.</p>
+        </div>
+
+        <div class="movie-search">
+            <input type="text" title="영화명을 입력하세요" class=".movieSearchBar" placeholder="영화명 검색" class="input-text">
+            <input type="button" value="검색"/>
+        </div>
+
+    </div>
+    
 	<div class="review-wrapper">
 		
-		<div class="title">
-			BOX Office
-		</div>
-		<div class="sub-title boxOffice">
-			TOP 10
-		</div>
 		<div class="boxOffice-content">
 			
 			<c:if test="${!empty bol }">

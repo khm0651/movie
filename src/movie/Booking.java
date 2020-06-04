@@ -62,8 +62,6 @@ public class Booking extends HttpServlet {
 		}finally {
 			
 		}
-		
-		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("./booking.jsp");
 		request.setAttribute("movieName", movieName);
 		request.setAttribute("movieImg", movieImg);

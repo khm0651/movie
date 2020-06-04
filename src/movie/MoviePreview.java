@@ -39,7 +39,6 @@ public class MoviePreview extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 
 		String vidCode = request.getParameter("c");
-		System.out.println(vidCode);
 
 		Document trailerDoc = Jsoup.connect("https://movie.naver.com/movie/bi/mi/media.nhn?code=" + vidCode).get();
 		Elements trailer = trailerDoc.select(".ifr_trailer .ifr_area .video_thumb li");
@@ -63,11 +62,11 @@ public class MoviePreview extends HttpServlet {
 
 		for (int j = 0; j < videoLink.length; j++) {
 
-			System.out.println("ì˜í™” ì¸ë„¤ì¼ ì£¼ì†Œ : " + videoThumb[j]);
-			System.out.println("ì˜ˆê³ íŽ¸ íŽ˜ì´ì§€ ì´ë™ href : " + videoLink[j]);
-			System.out.println("ì˜ˆê³ íŽ¸ ì œëª© :" + videoTitle[j]);
-			System.out.println("ì˜ˆê³ íŽ¸ ë“±ë¡ì¼ : " + videoDate[j]);
-			System.out.println("ì˜ˆê³ íŽ¸ ì˜ìƒ src : " + videoPlayerSrc[j]);
+			System.out.println("¿µÈ­ ½æ³×ÀÏ ÁÖ¼Ò : " + videoThumb[j]);
+			System.out.println("¿¹°íÆí ÆäÀÌÁö ÀÌµ¿ href : " + videoLink[j]);
+			System.out.println("¿¹°íÆí Á¦¸ñ :" + videoTitle[j]);
+			System.out.println("¿¹°íÆí µî·ÏÀÏ : " + videoDate[j]);
+			System.out.println("¿¹°íÆí ¿µ»ó src : " + videoPlayerSrc[j]);
 
 		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher("./review.jsp");

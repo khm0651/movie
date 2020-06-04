@@ -70,7 +70,7 @@
 
             <div class="content-menu-wrapper">
 
-                <div class="movie-search">
+                <div class="movie-search-index">
                     <div class="ms-wrapper">
                         <input type="text" class="movie-search-input" placeholder="영화명을 입력해주세요">
                         <img src="./img/ico-search-white.png" alt="">

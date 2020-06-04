@@ -1,10 +1,11 @@
 let vidio = document.querySelectorAll(".review-vidio");
+let videoPlayerSrc = document.getElementsByName("videoPlayerSrc");
 let modal = document.querySelector(".review-vidio-modal");
 let close = document.querySelector(".vidio-close");
 let header = document.querySelector(".header");
 let subTitle = document.getElementsByClassName("sub-title");
 let iframe = document.querySelector("iframe");
-let videoPlayerSrc = document.getElementsByName("videoPlayerSrc");
+
 header.classList.add("header-not-fixed");
 
 
