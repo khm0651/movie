@@ -29,14 +29,11 @@ li {
 }
 
 .lst_wrap {
-	width: 120px;
+	width: 100%;
 	float: left;
 	margin-right: 15px;
 }
 
-.lst_detail_t1 {
-	width: 770px;
-}
 
 .lst_dsc .tit a {
     color: #000;
@@ -183,11 +180,10 @@ li {
  */
  
 .tabs {
-  display: -webkit-box;
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 60rem;
-  margin-left: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .tabs label {
@@ -210,7 +206,7 @@ li {
           flex-grow: 1;
   width: 100%;
   display: none;
-  padding: 1rem;
+  padding: 0px 275px;
   background: #fff;
 }
 

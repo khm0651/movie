@@ -14,7 +14,7 @@ body{
     font-size: 15px;
     color: #444;
     font-weight: 400;
-    font-family: NanumBarunGothic,Dotum,'ï¿½ï¿½ï¿½ï¿½',sans-serif;
+    font-family: NanumBarunGothic,Dotum,'ë‹ì›€',sans-serif;
     overflow-x: hidden;
 }
 
@@ -59,7 +59,10 @@ body{
 }
 
 .header-right{
-    width:40%;
+    flex-direction: column;
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
 }
 
 
@@ -1198,8 +1201,6 @@ body{
     opacity: .5;
     cursor:pointer;
 }
-<<<<<<< HEAD
-
 
 .boxOffice-content{
     display: flex;
@@ -1233,7 +1234,7 @@ body{
 
 /* Arang */
 
-/* »ó´Ü ¹Ù*/
+/* ï¿½ï¿½ï¿½ ï¿½ï¿½*/
 .black-bar {
     display: flex;
     padding-top: 102px;
@@ -1266,7 +1267,7 @@ body{
     color: black;
 }
 
-/* Áß´Ü 'ÀüÃ¼¿µÈ­'*/
+/* ï¿½ß´ï¿½ 'ï¿½ï¿½Ã¼ï¿½ï¿½È­'*/
 .textBar {
     display: flex;
     font-size: 30px;
@@ -1278,7 +1279,7 @@ body{
     display: flex;
 }
 
-/* ÇÏ´Ü ¹öÆ° 4°³ ÅÇ */
+/* ï¿½Ï´ï¿½ ï¿½ï¿½Æ° 4ï¿½ï¿½ ï¿½ï¿½ */
 @media (max-width:1920px) {
     .movListButton {
         display: flex;
@@ -1511,7 +1512,7 @@ body{
 }
 
 
-/* ÃÖÇÏ´Ü ¿µÈ­ ¸ñ·Ï */
+/* ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½È­ ï¿½ï¿½ï¿½ */
 .movList {
     display: flex;
     margin-left: 7vw;
@@ -1563,7 +1564,7 @@ body{
     }
 }
 
-/* ¿µÈ­ ¼³¸í*/
+/* ï¿½ï¿½È­ ï¿½ï¿½ï¿½ï¿½*/
 
 .tit-area{
     margin-top: 2px;
@@ -1588,7 +1589,7 @@ body{
     margin-left: 4px;
 }
 
-/* ¿¬·ÉÁ¦ÇÑ */
+/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 .movie-grade {
     overflow: hidden;
     display: inline-block;
@@ -1614,5 +1615,5 @@ body{
 .movie-grade.age-19{
     background-image: url(https://img.megabox.co.kr/static/pc/images/common/txt/txt-age-19.png);
 }
-=======
->>>>>>> refs/remotes/origin/master
+
+
