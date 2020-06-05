@@ -29,11 +29,14 @@ li {
 }
 
 .lst_wrap {
-	width: 100%;
+	width: 120px;
 	float: left;
 	margin-right: 15px;
 }
 
+.lst_detail_t1 {
+	width: 770px;
+}
 
 .lst_dsc .tit a {
     color: #000;
@@ -180,10 +183,11 @@ li {
  */
  
 .tabs {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 60rem;
+  margin: 0 auto;
 }
 
 .tabs label {
@@ -206,7 +210,7 @@ li {
           flex-grow: 1;
   width: 100%;
   display: none;
-  padding: 0px 275px;
+  padding: 1rem;
   background: #fff;
 }
 
@@ -235,6 +239,24 @@ li {
     margin-top: 0.2rem;
   }
 }
+
+.delChkBoxBtn {
+	position: absolute;
+	left: 1115px;
+	top: 100px;
+  	background-color: #c0392b;
+  	border: none;
+  	color: white;
+  	padding: 15px 32px;
+  	text-align: center;
+  	text-decoration: none;
+  	display: inline-block;
+  	font-size: 16px;
+  	margin: 4px 2px;
+  	cursor: pointer;
+}
+
+
 
 .star_t1 {overflow:hidden}
 .star_t1 .st_off{float:left;overflow:hidden;width:75px;height:12px;margin-top:4px;background:url(https://ssl.pstatic.net/static/movie/2012/09/sp_star.png) no-repeat}

@@ -89,7 +89,7 @@ $(document)
 						//모바일로 접속시 이동 경로
 					} else {
 						var popUrl = "./recoMoviePopup.jsp";
-						var popOption = "width=745px, height=380px, resizable=no, location=no, top=300px, left=300px, location=no, menubar=no, resizable=no, scrollbars=no, status=no, toolbar=no;"
+						var popOption = "width=680px, height=430px, resizable=no, location=no, top=300px, left=300px;"
 
 						window.open(popUrl, "추천영화", popOption);
 						//PC로 접속시 이동 경로
@@ -137,5 +137,3 @@ const smoothWheel = (e) => {
 
 
 document.addEventListener("wheel",smoothWheel);
-
-

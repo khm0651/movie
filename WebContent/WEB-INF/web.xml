@@ -127,25 +127,6 @@ id="WebApp_ID" version="4.0">
     <url-pattern>/viewBoxOffice </url-pattern>
   </servlet-mapping>  
   
-   <servlet>
-    <servlet-name>Preview </servlet-name>
-    <servlet-class>movie.MoviePreview</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Preview </servlet-name>
-    <url-pattern>/moviePreview </url-pattern>
-  </servlet-mapping>    
-
-   <servlet>
-    <servlet-name>totalReview </servlet-name>
-    <servlet-class>movie.TotalReview</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>totalReview </servlet-name>
-    <url-pattern>/totalReview </url-pattern>
-  </servlet-mapping>  
-      
-
   <servlet>
     <servlet-name>recoMovieAction </servlet-name>
     <servlet-class>movie.RecoMovieAction</servlet-class>
@@ -155,5 +136,22 @@ id="WebApp_ID" version="4.0">
     <url-pattern>/recoMovieAction </url-pattern>
   </servlet-mapping>
   
-
+  <servlet>
+    <servlet-name>moviePreview </servlet-name>
+    <servlet-class>movie.MoviePreview</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>moviePreview </servlet-name>
+    <url-pattern>/moviePreview </url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>DelChkBoxAction </servlet-name>
+    <servlet-class>movie.DelChkBoxAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DelChkBoxAction </servlet-name>
+    <url-pattern>/delChkBoxAction </url-pattern>
+  </servlet-mapping>
+    
 </web-app>

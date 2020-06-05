@@ -3,23 +3,31 @@
 <%@ page import="org.jsoup.nodes.Element"%>
 <%@ page import="org.jsoup.select.Elements"%>
 
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FAST MOVIE</title>
-<link rel="stylesheet" type="text/css" href="./styles/recoMoviePopupStyle.css">
+<link rel="stylesheet" type="text/css"
+	href="./styles/recoMoviePopupStyle.css">
+
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700'
+	rel='stylesheet' type='text/css'>
 
 <!-- 합쳐지고 최소화된 최신 CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
 <!-- 부가적인 테마 -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
 <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<%
@@ -103,8 +111,24 @@
 	}
 	%>
 	<div class="container">
+		<img src="./img/logo_no_title.png" class="popup-logo" width="150" height="150" />
+		<div class="popup-title">
+
+			<div class="Iam">
+
+				<p>영화와</p>
+				<b>
+					<div class="innerIam">
+						<br /> 리뷰를<br /> 빠르고<br /> 다양하게<br /> 즐기자
+					</div>
+				</b>
+
+			</div>
+		</div>
 		<div class="jumbotron">
-			<form id="recoMovieForm" action="recoMovieAction" method="post" class="form-wrapper">
+
+			<form id="recoMovieForm" action="recoMovieAction" method="post"
+				class="form-wrapper">
 				<%
 					String recoMovie[] = new String[5];
 				String splitStr = "^";
@@ -125,14 +149,20 @@
 
 							<div class="thumb">
 
-								<input type="checkbox" id="thumbCheckbox<%=s%>" name="checkbox" value='<%=recoMovie[s]%>' style="opacity: 0; position: absolute; left: 9999px;" /> <label for="thumbCheckbox<%=s%>"> <img src="<%=thumbImgSrc[i][j]%>" />
+								<input type="checkbox" id="thumbCheckbox<%=s%>" name="checkbox"
+									value='<%=recoMovie[s]%>'
+									style="opacity: 0; position: absolute; left: 9999px;" /> <label
+									for="thumbCheckbox<%=s%>"> <img
+									src="<%=thumbImgSrc[i][j]%>" />
 								</label>
 
 
 							</div>
 							<dl class="lst_dsc">
 								<dt class="tit">
-									<span class="<%=dscAge[i][j]%>"></span> <a href="https://movie.naver.com<%=thumbHref[i][j]%>"> <font size="2"><%=dscTitle[i][j]%></font>
+									<span class="<%=dscAge[i][j]%>"></span> <a
+										href="https://movie.naver.com<%=thumbHref[i][j]%>"> <font
+										size="2"><%=dscTitle[i][j]%></font>
 									</a>
 								</dt>
 
@@ -167,13 +197,20 @@
 
 
 		</div>
-		<% if(session.getAttribute("LOGIN_ID") != null) { %>
+		<%
+			if (session.getAttribute("LOGIN_ID") != null) {
+		%>
 		<div class="submitBtn">
 			<p>
-				<input class="btn btn-lg btn-success" id="submitBtn" type="button" value="관심 영화 등록" />
+
+				<button class="btn btn-default" id="submitBtn">
+					<span class="glyphicon glyphicon-heart"></span> 관심 영화 등록
+				</button>
 			</p>
 		</div>
-		<% } %>
+		<%
+			}
+		%>
 	</div>
 	<script>
 		const submitBtn = document.getElementById("submitBtn");
@@ -182,8 +219,6 @@
 		function handleSubmit() {
 			recoMovieForm.submit();
 		}
-		
-		
 	</script>
 
 </body>
