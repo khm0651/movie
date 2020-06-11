@@ -62,18 +62,15 @@
                         <a href = "./totalReview" class="item review">
                            	리뷰 
                         </a>
-                        <a class="item">
-                            게시판
-                        </a>
                         <a class="item random">
                             랜덤예매
                         </a>
                     </div>
                     
                     <div class="cal-login">
-                        <img src="./img/ico-schedule-white.png" class="cal">
+                        <a href="./bookingTime"><img src="./img/ico-schedule-white.png" class="cal"></a>
 
-                        <img src="./img/ico-mymega-white.png" class="login">
+                        <a href="./mypage"><img src="./img/ico-mymega-white.png" class="login"></a>
 
                     </div>
 

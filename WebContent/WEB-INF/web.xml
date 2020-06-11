@@ -145,6 +145,15 @@ id="WebApp_ID" version="4.0">
     <url-pattern>/moviePreview </url-pattern>
   </servlet-mapping>
   
+    <servlet>
+    <servlet-name>totalReview </servlet-name>
+    <servlet-class>movie.TotalReview</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>totalReview </servlet-name>
+    <url-pattern>/totalReview </url-pattern>
+  </servlet-mapping>
+  
   <servlet>
     <servlet-name>DelChkBoxAction </servlet-name>
     <servlet-class>movie.DelChkBoxAction</servlet-class>

@@ -21,10 +21,10 @@ public class JnoodleDBconn {
 			conn = DriverManager.getConnection(url, user, password);
 			System.out.println("DB connected");
 		} catch (ClassNotFoundException e) {
-			System.out.println("MySQL ë“œë¼ì´ë²„ê°€ ì—†ìŠµë‹ˆë‹¤.");
+			System.out.println("MySQL µå¶óÀÌ¹ö°¡ ¾ø½À´Ï´Ù.");
 		} catch (SQLException e) {
 			e.printStackTrace();
-			System.out.println("ì‚¬ìš©ì ê³„ì • ë˜ëŠ” ë¹„ë°€ë²ˆí˜¸ê°€ ì¼ì¹˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
+			System.out.println("»ç¿ëÀÚ °èÁ¤ ¶Ç´Â ºñ¹Ğ¹øÈ£°¡ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù.");
 		}
 		return conn;
 	}
