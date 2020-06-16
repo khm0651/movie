@@ -33,11 +33,10 @@
 
     <div class="movListButton">
         <ul class="topMenu">
-            <li class="on"><a href="movie.html">박스오피스</a></li>
-            <li><a href="comingsoon.html">상영예정작</a></li>
-            <li><a href="#">추천영화</a></li>
-            <li><a href="#">랜덤영화</a></li>
-
+            <li class="on"><a href="./viewBoxOffice">박스오피스</a></li>
+            <li><a href="./scheduleMovie.jsp">상영예정작</a></li>
+            <li><a href="./recomendMovie.jsp">추천영화</a></li>
+            <li><a href="./randomMovie.jsp">랜덤영화</a></li>
         </ul>
     </div>
     

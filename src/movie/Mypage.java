@@ -80,7 +80,6 @@ public class Mypage extends HttpServlet {
 				dto.setPoster(rs.getString("poster"));
 			}
 			
-			// 관심 영화 목록 {
 			stmtInterMovieList = conn.createStatement();
 			String sqlInterMovieList = "select * from intermovietable where movieUserId = '" + user + "'";
 			rsInterMovieList = stmtInterMovieList.executeQuery(sqlInterMovieList);

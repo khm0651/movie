@@ -162,5 +162,14 @@ id="WebApp_ID" version="4.0">
     <servlet-name>DelChkBoxAction </servlet-name>
     <url-pattern>/delChkBoxAction </url-pattern>
   </servlet-mapping>
+  
+    <servlet>
+    <servlet-name>signUP  </servlet-name>
+    <servlet-class>movie.SignUp </servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>signUP  </servlet-name>
+    <url-pattern>/signUP </url-pattern>
+  </servlet-mapping>
     
 </web-app>

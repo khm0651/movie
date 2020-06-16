@@ -59,8 +59,8 @@ public class YoutubeReview extends HttpServlet {
 				i++;
 			}
 
-			String[] youtubeSrc = new String[10]; // youtube ï¿½Ö¼ï¿½
-			String[] youtubeTitle = new String[10]; // youtube ï¿½ï¿½ï¿½ï¿½
+			String[] youtubeSrc = new String[10]; 
+			String[] youtubeTitle = new String[10]; 
 
 			for (int j = 0; j < movieName.length; j++) {
 				Document doc1 = Jsoup.connect("https://www.google.com/search?q=youtube: " + movieName[j] + " ¿µÈ­ ¸®ºä&source=lnms&tbm=vid").get();

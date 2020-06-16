@@ -1,0 +1,29 @@
+/* join */
+
+.body-wrapper .header {
+    position: unset;
+}
+
+.join_ul {
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+
+.join_li {
+    line-height: 30px;
+}
+
+#containerOut{
+    margin-top: 20px;
+}
+
+#container {
+    border: 1px solid black;
+    margin: 1px auto;
+    padding: 20px 40px;
+    width: 520px;
+}
+
+.button {
+    margin-top: 80px;
+}

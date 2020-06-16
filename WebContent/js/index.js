@@ -57,8 +57,6 @@ for(let i = 0; i<img.length; i++){
 				}else{
 					alert("유튜브 리뷰영상이 없습니다.");
 				}
-				
-				
 			})
 		}
 	});

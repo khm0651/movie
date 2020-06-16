@@ -49,7 +49,7 @@
 								out.println("<a href='./mypage' class='username'>"+session.getAttribute("LOGIN_ID")+"</a>");
 								out.println("<div class='welcome-label'>님 환영합니다.</div>");
 							}else{
-								out.println("<a href='./sign-up.jsp'>회원가입</a>");
+								out.println("<a href='./join.jsp'>회원가입</a>");
 							}
 						%>
                        	 
