@@ -88,4 +88,5 @@
 	
 </body>
 <script src= "./js/boxOffice.js"></script>
+<script src="./js/header.js"></script>
 </html>

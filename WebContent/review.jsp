@@ -39,6 +39,7 @@
 		</c:if>
 	</div>
 	<script src="./js/review.js"></script>
+	<script src="./js/header.js"></script>
 </body>
 
 

@@ -96,6 +96,6 @@
 	</div>
 	<script src="./js/header.js"></script>
 	<script src="./js/totalReview.js"></script>
-	<script src="./js/header.js"></script>
+	
 </body>
 </html>
